@@ -67,7 +67,7 @@
     <body>
 
     <div id="app"  >
-    {{ message }}
+  
     </div>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
