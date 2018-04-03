@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                   Profile {{Auth::user()->prenom}}
                 </div>
             </div>
         </div>
