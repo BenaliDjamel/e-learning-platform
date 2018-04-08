@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Categories;
+use App\PublicationFichier;
 
 class Publication extends Model
 {
@@ -15,5 +16,9 @@ class Publication extends Model
 
     public function categorie() {
         return $this->belongsTo(Categories::class);
+    }
+
+    public function publication_avec_fichier() {
+        return $this->hasOne(Categories::class);
     }
 }
