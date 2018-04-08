@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\profile;
+use App\Formation;
 
 class User extends Authenticatable
 {
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id','nom', 'prenom','adresse','telephone','sex','date_naissance', 'email', 'password',
+        'id','nom','formation_id', 'prenom','adresse','telephone','sex','date_naissance', 'email', 'password',
     ];
 
     /**
@@ -30,5 +31,9 @@ class User extends Authenticatable
 
     public function profile() {
         return $this->hasOne(profile::class);
+    }
+
+    public function formation() {
+        return $this->belongsTo(Formation::class);
     }
 }
