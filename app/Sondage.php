@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Publication;
+use App\SondageChoix;
 
 class Sondage extends Model
 {
@@ -15,5 +16,9 @@ class Sondage extends Model
 
     public function publication() {
         return $this->belongsTo(Publication::class);
+    }
+
+    public function sondage_choix() {
+        return $this->hasMany(SondageChoix::class);
     }
 }
