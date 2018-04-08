@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePublicationFichiersTable extends Migration
+class CreateFaqsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreatePublicationFichiersTable extends Migration
      */
     public function up()
     {
-        Schema::create('publication_fichiers', function (Blueprint $table) {
+        Schema::create('faqs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('publication_id');
-            $table->string('chemin_fichier');
-            $table->string('type_fichier');
+            $table->boolean('meilleur_reponse');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreatePublicationFichiersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('publication_fichiers');
+        Schema::dropIfExists('faqs');
     }
 }

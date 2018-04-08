@@ -19,6 +19,9 @@ class Publication extends Model
     }
 
     public function publication_avec_fichier() {
-        return $this->hasOne(Categories::class);
+        return $this->hasOne(PublicationFichier::class);
+    }
+    public function faq() {
+        return $this->hasOne(PublicationFichier::class);
     }
 }
