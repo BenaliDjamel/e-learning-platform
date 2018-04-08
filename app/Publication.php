@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Categories;
 use App\PublicationFichier;
 use App\Sondage;
-
+use App\Tag;
 class Publication extends Model
 {
     
@@ -28,4 +28,8 @@ class Publication extends Model
     public function sondage() {
         return $this->hasOne(Sondage::class);
     }
+    public function tags() {
+        return $this->belongsToMany(Tag::class);
+    }
+
 }
