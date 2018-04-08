@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Categories;
 use App\PublicationFichier;
+use App\Sondage;
 
 class Publication extends Model
 {
@@ -23,5 +24,8 @@ class Publication extends Model
     }
     public function faq() {
         return $this->hasOne(PublicationFichier::class);
+    }
+    public function sondage() {
+        return $this->hasOne(Sondage::class);
     }
 }
