@@ -5,8 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Categories;
 use App\PublicationFichier;
+use App\Faq;
 use App\Sondage;
 use App\Tag;
+use App\Commentaire;
+use App\Like;
 class Publication extends Model
 {
     
@@ -23,7 +26,7 @@ class Publication extends Model
         return $this->hasOne(PublicationFichier::class);
     }
     public function faq() {
-        return $this->hasOne(PublicationFichier::class);
+        return $this->hasOne(Faq::class);
     }
     public function sondage() {
         return $this->hasOne(Sondage::class);
@@ -31,5 +34,10 @@ class Publication extends Model
     public function tags() {
         return $this->belongsToMany(Tag::class);
     }
-
+    public function commentaires() {
+        return $this->hasMany(commentaires::class);
+    }
+    public function likes() {
+        return $this->hasMany(Like::class);
+    }
 }

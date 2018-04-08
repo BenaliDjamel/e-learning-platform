@@ -8,6 +8,7 @@ use App\profile;
 use App\Formation;
 use App\Role;
 use App\Reclamation;
+use App\Like;
 
 class User extends Authenticatable
 {
@@ -45,5 +46,8 @@ class User extends Authenticatable
 
     public function reclamations() {
         return $this->hasMany(Reclamation::class);
+    }
+    public function likes() {
+        return $this->hasMany(Like::class);
     }
 }
