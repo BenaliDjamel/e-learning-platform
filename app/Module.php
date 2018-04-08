@@ -8,7 +8,7 @@ use App\Formation;
 class Module extends Model
 {
     protected $fillable = [
-        'nom'
+        'nom','formation_id'
     ];
 
 

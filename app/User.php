@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\profile;
 use App\Formation;
+use App\Role;
 
 class User extends Authenticatable
 {
@@ -35,5 +36,9 @@ class User extends Authenticatable
 
     public function formation() {
         return $this->belongsTo(Formation::class);
+    }
+
+    public function roles() {
+        return $this->hasMany(Role::class);
     }
 }
