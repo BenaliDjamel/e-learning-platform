@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\profile;
 use App\Formation;
 use App\Role;
+use App\Reclamation;
 
 class User extends Authenticatable
 {
@@ -40,5 +41,9 @@ class User extends Authenticatable
 
     public function roles() {
         return $this->hasMany(Role::class);
+    }
+
+    public function reclamation() {
+        return $this->hasMany(Reclamation::class);
     }
 }
