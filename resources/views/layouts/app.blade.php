@@ -10,18 +10,18 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>NTICien</title>
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css">
-        <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
-        <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
-        <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>NTICien</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body style="font-family:'Nunito Sans', sans-serif;background-color:#edf2f6;">
@@ -71,10 +71,10 @@
                     </button>
 
                     @guest
-                    
-                        <a class="navbar-link navbar-right" href="{{ route('login') }}">S'authentifier</a>
-                        <a class="navbar-link navbar-right inscrire-btn" href="{{ route('register') }}">S'inscrire</a>
-                    
+
+                    <a class="navbar-link navbar-right" href="{{ route('login') }}">S'authentifier</a>
+                    <a class="navbar-link navbar-right inscrire-btn" href="{{ route('register') }}">S'inscrire</a>
+
                     @else
                     <li class="dropdown  nav navbar-nav navbar-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
@@ -108,11 +108,11 @@
                         </ul>
                     </li>
                     @endguest
-               
+
                 </div>
 
 
-              <!--  <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!--  <div class="collapse navbar-collapse" id="app-navbar-collapse">
                   
                     <ul class="nav navbar-nav">
                         &nbsp;
@@ -165,18 +165,24 @@
                 </div> -->
             </div>
         </nav>
-
-        @yield('content')
+       
+        
+              
+                @yield('content')
+        
+       
+        
+      
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    
+
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
     <script src="assets/js/main.js"></script>
-  
+
 </body>
 
 </html>
