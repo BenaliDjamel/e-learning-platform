@@ -4,12 +4,13 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Auth\Passwords\CanResetPassword;
 use App\profile;
 use App\Formation;
 use App\Role;
 use App\Reclamation;
 use App\Like;
-
+use App\Notifications\ResetPasswordNotification;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -20,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id','nom','formation_id', 'prenom','adresse','telephone','sex','date_naissance', 'email', 'password',
+        'id','nom', 'prenom', 'email', 'password',
     ];
 
     /**
@@ -49,5 +50,11 @@ class User extends Authenticatable
     }
     public function likes() {
         return $this->hasMany(Like::class);
+    }
+
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
     }
 }

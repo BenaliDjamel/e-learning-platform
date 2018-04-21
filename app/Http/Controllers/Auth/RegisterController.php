@@ -51,10 +51,6 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'nom' => 'required|string|max:255',
             'prenom' => 'required|string|max:255',
-            'adresse' => 'required|string|max:255',
-            'telephone' => 'required',
-            'sex' => 'required',
-            'date_naissance' => 'required',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -71,10 +67,6 @@ class RegisterController extends Controller
         $user =  User::create([
             'nom' => $data['nom'],
             'prenom' => $data['prenom'],
-            'adresse' => $data['adresse'],
-            'telephone' => $data['telephone'],
-            'sex' => $data['sex'],
-            'date_naissance' => $data['date_naissance'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
            
@@ -83,8 +75,12 @@ class RegisterController extends Controller
            //     dd($user);
         Profile::create([
             'user_id' =>  $user->id,
-            'image'=> 'image.png',
+            'photo_profile'=> 'image.compng',
             'information' => 'nticien student',
+            'formation'=>'Ti',
+            'sexe'=>'Homme',
+            'telephone'=>'0779758510',
+            'date_naissance'=>'1996-04-11',
             'facebook' => 'www.facebook.com',
             'twitter' => 'www.twitter.com'
        ]);
