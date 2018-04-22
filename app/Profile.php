@@ -8,7 +8,8 @@ use App\User;
 class Profile extends Model
 {
    protected $fillable =  [
-   'user_id', 'image','information','facebook','twitter'
+   'user_id', 'photo_profile','telephone','formation',
+   'sexe','date_naissance','information','facebook','twitter'
    ];
 
 
